@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FBIS — Robotic Duct Cleaning &amp; Integrated Kitchen Hygiene Technology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- TRIAL 4: Loading intro -->
+<div class="intro-overlay" id="intro">
+  <svg viewBox="-85 -85 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="0" cy="0" r="78" stroke="#fff" stroke-width="1"/>
+    <line x1="9" y1="-9" x2="49" y2="-49" stroke="#fff" stroke-width="1.5"/>
+    <line x1="-9" y1="-9" x2="-49" y2="-49" stroke="#fff" stroke-width="1.5"/>
+    <line x1="-9" y1="9" x2="-49" y2="49" stroke="#fff" stroke-width="1.5"/>
+    <line x1="9" y1="9" x2="49" y2="49" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="10" stroke="#fff" stroke-width="1"/>
+  </svg>
+</div>
+
+<!-- TRIAL: Film grain -->
+<div class="grain-overlay"></div>
+
+<!-- TRIAL: Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- TRIAL: Ambient particles -->
+<canvas id="particles"></canvas>
+
+<!-- ═══════════ TIER 1: LOGO BANNER ═══════════ -->
+<div class="nav-banner" id="navBanner">
+  <div class="banner-logo" onclick="go('home')">
+    <svg class="banner-icon" viewBox="-85 -85 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="0" cy="0" r="78" fill="none" stroke="#FFFFFF" stroke-width="2" opacity=".3"/>
+  <circle cx="0" cy="0" r="12" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity=".5"/>
+  <circle cx="0" cy="0" r="4" fill="#fff" opacity=".3"/>
+  <line x1="9" y1="-9" x2="49" y2="-49" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity=".4"/>
+  <line x1="-9" y1="-9" x2="-49" y2="-49" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity=".4"/>
+  <line x1="-9" y1="9" x2="-49" y2="49" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity=".4"/>
+  <line x1="9" y1="9" x2="49" y2="49" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity=".4"/>
+  <circle cx="53" cy="-53" r="5" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity=".35"/>
+  <circle cx="-53" cy="-53" r="5" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity=".35"/>
+  <circle cx="-53" cy="53" r="5" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity=".35"/>
+  <circle cx="53" cy="53" r="5" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity=".35"/>
+  <circle cx="0" cy="0" r="63" fill="none" stroke="#FFFFFF" stroke-width="0.8" stroke-dasharray="5 4" opacity=".15"/>
+  <g><animateTransform attributeName="transform" type="rotate" values="0;360" dur="20s" repeatCount="indefinite"/>
+    <line x1="0" y1="0" x2="0" y2="-63" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+    <circle cx="0" cy="-63" r="3.5" fill="#fff" opacity=".4"/>
+  </g>
+</svg>
+    <div>
+      <div class="banner-wordmark">FBIS</div>
+      <div class="banner-sub">Food &amp; Beverage Innovative Solutions</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ TIER 2: PRODUCT BAR ═══════════ -->
+<div class="nav-bar" id="navBar">
+  <div class="bar-home" onclick="go('home')">
+    <svg class="bar-icon" viewBox="-85 -85 170 170" fill="none">
+  <circle cx="0" cy="0" r="78" fill="none" stroke="#fff" stroke-width="2.5" opacity=".8"/>
+  <circle cx="0" cy="0" r="12" fill="none" stroke="#fff" stroke-width="1.5" opacity=".9"/>
+  <line x1="9" y1="-9" x2="49" y2="-49" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+  <line x1="-9" y1="-9" x2="-49" y2="-49" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+  <line x1="-9" y1="9" x2="-49" y2="49" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+  <line x1="9" y1="9" x2="49" y2="49" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+</svg>
+    <span class="bar-wordmark">FBIS</span>
+  </div>
+  <div class="nav-bar-links" id="navLinks">
+    <a onclick="go('ventbot')" data-page="ventbot"><span class="nb-num">01</span><span class="nb-name">VentBot</span><span class="nb-tag">Robotic Cleaning</span></a>
+    <a onclick="go('provent')" data-page="provent"><span class="nb-num">02</span><span class="nb-name">Pro-Vent</span><span class="nb-tag">Probiotic Fogging</span></a>
+    <a onclick="go('venturion')" data-page="venturion"><span class="nb-num">03</span><span class="nb-name">Venturion</span><span class="nb-tag">Grease Baffle Filter</span></a>
+    <a onclick="go('greaseeye')" data-page="greaseeye"><span class="nb-num">04</span><span class="nb-name">GreaseEye</span><span class="nb-tag">Grease Measurement</span></a>
+    <a onclick="go('kitcheniq')" data-page="kitcheniq"><span class="nb-num">05</span><span class="nb-name">Kitchen-IQ</span><span class="nb-tag">Management Platform</span></a>
+    <a onclick="go('sterice')" data-page="sterice"><span class="nb-num">06</span><span class="nb-name">Steri-Ice</span><span class="nb-tag">Ozone Sanitisation</span></a>
+    <a onclick="go('innpulse')" data-page="innpulse"><span class="nb-num">07</span><span class="nb-name">InnPulse</span><span class="nb-tag">Beer Line Tech</span></a>
+    <a onclick="go('innline')" data-page="innline"><span class="nb-num">08</span><span class="nb-name">InnLine</span><span class="nb-tag">Pod Cleaner</span></a>
+    <div class="nav-divider"></div>
+    <a onclick="go('about')" data-page="about" class="nav-co"><span class="nb-name">Who We Are</span></a>
+    <a onclick="go('contact')" data-page="contact" class="nav-co"><span class="nb-name">Contact</span></a>
+  </div>
+  <div class="bar-cta"><a class="btn sm" onclick="go('contact')">Get in Touch</a></div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE: HOME                             -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+<section class="hero hero-full">
+  <div class="hero-grid"></div>
+  <div class="hero-watermark">
+    <svg viewBox="-85 -85 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="0" cy="0" r="78" fill="none" stroke="#fff" stroke-width="1" opacity="1"/>
+      <line x1="9" y1="-9" x2="49" y2="-49" stroke="#fff" stroke-width="1.5" opacity="1"/>
+      <line x1="-9" y1="-9" x2="-49" y2="-49" stroke="#fff" stroke-width="1.5" opacity="1"/>
+      <line x1="-9" y1="9" x2="-49" y2="49" stroke="#fff" stroke-width="1.5" opacity="1"/>
+      <line x1="9" y1="9" x2="49" y2="49" stroke="#fff" stroke-width="1.5" opacity="1"/>
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#fff" stroke-width="1" opacity="1"/>
+    </svg>
+  </div>
+  <div class="r">
+    <div class="label"><span class="label-typewriter">Food &amp; Beverage Innovative Solutions</span></div>
+    <h1>Intelligent<br>kitchen hygiene<span class="d">.</span></h1>
+    <p style="font-family:'Outfit',sans-serif;font-size:clamp(22px,2.5vw,32px);font-weight:500;color:rgba(255,255,255,.6);letter-spacing:-.5px;margin-bottom:28px">Innovative hygiene solutions for the F&amp;B industry.</p>
+    <p class="hero-sub">From fire risk in extraction systems to bacteria in ice machines and waste in beer lines — technology that replaces reactive, manual maintenance.</p>
+    <p class="hero-proof">Trusted by the UK's largest pub and restaurant groups and leading hospitality maintenance specialists</p>
+    <div class="hero-btns">
+      <a class="btn" onclick="document.getElementById('home-solutions').scrollIntoView({behavior:'smooth'})">Our Solutions &rarr;</a>
+      <a class="btn-o" onclick="go('contact')">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section class="stat-band r">
+  <div class="stat-band-item"><div class="stat-band-val">70m</div><div class="stat-band-label">Robotic reach into ductwork humans can't access</div></div>
+  <div class="stat-band-item"><div class="stat-band-val">99.9%</div><div class="stat-band-label">Bacteria reduction in ice machines</div></div>
+  <div class="stat-band-item"><div class="stat-band-val">50%</div><div class="stat-band-label">Reduction in scheduled grease cleans</div></div>
+  <div class="stat-band-item"><div class="stat-band-val">75%</div><div class="stat-band-label">Fewer beer line cleans required</div></div>
+</section>
+
+<hr class="section-rule r">
+
+<section class="problem-section r">
+  <div class="inner">
+    <div class="problem-header">
+      <div class="label">The Problem</div>
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(28px,3vw,44px);font-weight:800;letter-spacing:-2px;line-height:1.1;margin-top:16px;margin-bottom:20px">Kitchen extraction is the single greatest fire risk in commercial food environments.</h2>
+      <p style="font-size:16px;line-height:1.8;color:var(--t3)">Grease builds silently. Cleaning is infrequent, invasive, and expensive. Some ductwork is physically impossible to reach by hand. Most operators don't know the true state of their systems until an insurer flags it — or worse.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="num">01</div>
+        <h3>Unreachable buildup</h3>
+        <p>Vertical risers, sealed shafts, and complex bends accumulate grease that no human or magnetic scraper can access. These hidden sections carry the highest fire risk and have zero compliance documentation.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">02</div>
+        <h3>Cleaning that doesn't prevent</h3>
+        <p>A deep clean restores the duct to bare metal — then grease starts building again the same day. The cycle repeats every 6 to 12 months with nothing working in between.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">03</div>
+        <h3>No way to measure it</h3>
+        <p>Operators schedule cleans by calendar, not by condition. Without data on actual grease levels, you're either cleaning too often and overspending, or not often enough and carrying risk you can't see.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule r">
+
+<section class="solutions-section r" id="home-solutions">
+  <div class="inner">
+    <div class="solutions-header">
+      <div class="label">Our Solutions</div>
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(28px,3vw,44px);font-weight:800;letter-spacing:-2px;line-height:1.1;margin-top:16px;margin-bottom:20px">Eight integrated products for extraction hygiene, ice safety, beer line management, and intelligent monitoring.</h2>
+      <p style="font-size:16px;line-height:1.8;color:var(--t3)">Each product targets a specific problem in the food and beverage environment. Together, they replace fragmented, reactive maintenance with a connected system that cleans, prevents, measures, and manages.</p>
+    </div>
+    <div class="solutions-grid">
+      <a class="solution-card" onclick="go('ventbot')">
+        <div class="card-num">01 — Extraction</div>
+        <h3>VentBot</h3>
+        <div class="card-tag">Robotic Duct Cleaning</div>
+        <p>An autonomous robot enters your ductwork and blasts every surface with dry ice at &minus;78.5&deg;C. Reaches 70 metres from a single entry point — cleaning areas no human can access. No scaffolding, no confined space entry, HD video proof of every clean.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+      <a class="solution-card" onclick="go('provent')">
+        <div class="card-num">02 — Prevention</div>
+        <h3>Pro-Vent</h3>
+        <div class="card-tag">Automated Probiotic Fogging</div>
+        <p>Installed inside the extraction system, Pro-Vent fogs a proprietary enzyme and probiotic solution through your ductwork every night. Bacteria colonise duct surfaces and continuously digest grease — cutting buildup by up to 50% between deep cleans.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+      <a class="solution-card" onclick="go('venturion')">
+        <div class="card-num">03 — Capture</div>
+        <h3>Venturion</h3>
+        <div class="card-tag">Advanced Grease Baffle Filter</div>
+        <p>Compound-curve baffle geometry that captures 50% more grease than standard filters — including fine particles below 10&micro;m. Intercepts grease at the canopy before it enters the duct. Patent pending.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+    </div>
+    <div class="solutions-grid solutions-grid-2" style="margin-top:20px">
+      <a class="solution-card" onclick="go('greaseeye')">
+        <div class="card-num">04 — Measurement</div>
+        <h3>GreaseEye</h3>
+        <div class="card-tag">Real-Time Grease Measurement</div>
+        <p>Optical sensors measure grease accumulation daily — predicting when cleaning is actually needed instead of guessing on a calendar. Feeds data to Kitchen-IQ for autonomous decision making.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+      <a class="solution-card" onclick="go('kitcheniq')">
+        <div class="card-num">05 — Intelligence</div>
+        <h3>Kitchen-IQ</h3>
+        <div class="card-tag">Autonomous Management Platform</div>
+        <p>The central hub that connects every FBIS product into a single autonomous system. GreaseEye feeds data in. Kitchen-IQ makes decisions. Products respond. One dashboard for your entire estate.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+    </div>
+    <div class="solutions-grid" style="margin-top:20px">
+      <a class="solution-card" onclick="go('sterice')">
+        <div class="card-num">06 — Sanitisation</div>
+        <h3>Steri-Ice</h3>
+        <div class="card-tag">Ice Machine Hygiene</div>
+        <p>A compact wall-mounted unit that continuously treats your ice machine water with ozone. Destroys biofilm, mould, and bacteria — achieving 99.9% pathogen reduction without chemicals or manual cleaning.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+      <a class="solution-card" onclick="go('innpulse')">
+        <div class="card-num">07 — Beer Lines</div>
+        <h3>InnPulse</h3>
+        <div class="card-tag">Electronic Line Management</div>
+        <p>Electromagnetic pulses keep yeast and bacteria suspended in your beer lines, extending clean cycles from weekly to every 28 days. 75% fewer cleans means less waste, less downtime, and consistently better pours.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+      <a class="solution-card" onclick="go('innline')">
+        <div class="card-num">08 — Beer Lines</div>
+        <h3>InnLine</h3>
+        <div class="card-tag">Pod Line Cleaner</div>
+        <p>One dissolvable pod replaces measuring, mixing, and handling hazardous concentrates. Drop it in your cleaning vessel — 10 litres of ready solution, no GHS hazard classification when diluted, no dosing errors.</p>
+        <span class="card-link">Learn more &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" style="padding:100px 48px">
+  <h2>Let's talk.</h2>
+  <p>Operating a multi-site estate? We'll show you how to bring every site into full compliance with less disruption and lower cost. Running a vent cleaning company? We'll give your team robotic and preventive capability overnight.</p>
+  <div class="hero-btns">
+    <a class="btn" onclick="go('contact')">Get in Touch &rarr;</a>
+    <a class="btn-o" onclick="go('about')">Who We Are</a>
+  </div>
+</section>
+</div>
+
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE: VENTBOT                          -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-ventbot">
+<section class="product-hero-section"><div class="product-hero-inner"><div class="product-hero-text r">
+  <div class="label">01 — Extraction</div>
+  <h1>VentBot</h1>
+  <div class="tagline">Robotic Duct Cleaning</div>
+  <p class="punch">Dry ice pellets at &minus;78.5&deg;C convert grease and carbon to fine dust. No scaffolding. No confined space entry. No building modifications.</p>
+  <p class="desc">An autonomous robot enters the duct, grips the walls with four extending legs, and blasts every surface with a 360&deg; orbiting spray arm. Front and rear cameras document every centimetre.</p>
+  <div class="product-stats">
+    <div><div class="product-stat-val">70m</div><div class="product-stat-label">Range from Entry</div></div>
+    <div><div class="product-stat-val">250–900mm</div><div class="product-stat-label">Duct Compatibility</div></div>
+    <div><div class="product-stat-val">360&deg;</div><div class="product-stat-label">Spray Arm Orbit</div></div>
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start;margin-top:20px"><a class="btn" onclick="go('contact')">Get a Quote &rarr;</a><a class="btn-o" href="pdfs/FBIS_ventbot.pdf" download>Download PDF &darr;</a></div>
+</div><div class="product-hero-img"><img src="images/ventbot.png" alt="VentBot"></div></div></section>
+<section class="render-section r">
+  <img src="renders/ventbot.svg" class="product-render" style="width:100%;max-width:1100px;margin:0 auto;display:block;aspect-ratio:1/1">
+</section>
+<section class="detail-section pad"><div class="inner"><div class="detail-grid r">
+  <div><div class="label" style="margin-bottom:16px">How It Works</div><h2>Enters the duct.<br>Cleans everything.</h2><p>VentBot is inserted via an access panel. Four telescopic legs extend outward, gripping the duct walls with drive wheels. The robot traverses the entire system — vertically, horizontally, around bends — up to 70 metres from the entry point.</p><p>A spray arm orbits 360&deg; around the inside circumference, blasting dry ice pellets at every surface. At &minus;78.5&deg;C, the thermal shock converts grease and carbon into fine dust. No water. No chemicals. No residue.</p></div>
+  <div><ul class="feature-list">
+    <li><span>01</span>Robot inserted via standard access panel — no building modifications</li>
+    <li><span>02</span>Four extending legs grip duct walls in any geometry</li>
+    <li><span>03</span>360&deg; orbiting spray arm blasts dry ice at &minus;78.5&deg;C</li>
+    <li><span>04</span>Grease and carbon sublimated to fine dust — zero residue</li>
+    <li><span>05</span>Front and rear cameras document every centimetre</li>
+    <li><span>06</span>Round, square, and rectangular ducts: 250mm–900mm</li>
+    <li><span>07</span>TR19 and NFPA 96 compliant report with photos</li>
+  </ul></div>
+</div></div></section>
+<section class="detail-section pad" style="background:var(--bg2)"><div class="inner"><div class="detail-grid r">
+  <div><div class="label" style="margin-bottom:16px">Service Model</div><h2>We bring the robot.<br>We do the clean.</h2><p>VentBot is a service, not a product you buy. Our technicians deploy alongside your existing vent hygiene partners, coordinating deep cleans across your entire estate.</p></div>
+  <div><ul class="feature-list">
+    <li><span>&#10003;</span>No hardware for you to buy, maintain, or store</li>
+    <li><span>&#10003;</span>Site survey to assess access and complexity</li>
+    <li><span>&#10003;</span>Coordinated deployment across multi-site estates</li>
+    <li><span>&#10003;</span>Full TR19-compliant documentation after every clean</li>
+    <li><span>&#10003;</span>Works best paired with Pro-Vent for ongoing prevention</li>
+  </ul></div>
+</div></div></section>
+<section class="cta-band"><div class="inner r"><h2>Interested in VentBot?</h2><p>Talk to us about deploying VentBot across your estate.</p><div class="hero-btns"><a class="btn" onclick="go('contact')">Get in Touch &rarr;</a><a class="btn-o" onclick="go('provent')">Next: Pro-Vent &rarr;</a></div></div></section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE: PRO-VENT                         -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-provent">
+<section class="product-hero-section"><div class="product-hero-inner"><div class="product-hero-text r">
+  <div class="label">02 — Prevention</div>
+  <h1>Pro-Vent</h1>
+  <div class="tagline">Automated Probiotic Fogging</div>
+  <p class="punch">Bacteria and enzymes that digest grease biologically — fogged into your ductwork every night, automatically. Patented technology.</p>
+  <p class="desc">Spore-forming Bacillus bacteria colonise duct surfaces and continuously break down fat, protein, and starch into CO&#8322; and water.</p>
+  <div class="product-stats">
+    <div><div class="product-stat-val">600ml</div><div class="product-stat-label">Daily Dose</div></div>
+    <div><div class="product-stat-val">24/7</div><div class="product-stat-label">Biological Action</div></div>
+    <div><div class="product-stat-val">Patented</div><div class="product-stat-label">Technology</div></div>
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start;margin-top:20px"><a class="btn" onclick="go('contact')">Get a Quote &rarr;</a><a class="btn-o" href="pdfs/FBIS_provent.pdf" download>Download PDF &darr;</a></div>
+</div><div class="product-hero-img"><img src="images/provent.png" alt="Pro-Vent"></div></div></section>
+<section class="render-section r">
+  <img src="renders/provent.svg" class="product-render" style="width:100%;max-width:1100px;margin:0 auto;display:block;aspect-ratio:1/1">
+</section>
+<section class="detail-section pad"><div class="inner"><div class="detail-grid r">
+  <div><div class="label" style="margin-bottom:16px">How It Works</div><h2>Bacteria that eat grease.<br>Every night. Automatically.</h2><p>Four ultrasonic nozzles disperse 600ml of probiotic liquid as ultra-fine fog (10–50 microns). Three strains of spore-forming Bacillus bacteria germinate on contact with grease, producing lipase, protease, and amylase enzymes.</p></div>
+  <div><ul class="feature-list">
+    <li><span>01</span>Patented technology — UK approved, EU/US applications in progress</li>
+    <li><span>02</span>4 ultrasonic nozzles fog 600ml/day overnight</li>
+    <li><span>03</span>Spore-forming bacteria survive fogging and colonise surfaces</li>
+    <li><span>04</span>Lipase, protease, amylase break down all grease components</li>
+    <li><span>05</span>Fully automated — no staff involvement required</li>
+    <li><span>06</span>Monthly service by FBIS: check, replenish, report</li>
+    <li><span>07</span>Best results after VentBot deep clean</li>
+  </ul></div>
+</div></div></section>
+<section class="cta-band"><div class="inner r"><h2>Interested in Pro-Vent?</h2><p>Talk to us about deploying Pro-Vent across your estate.</p><div class="hero-btns"><a class="btn" onclick="go('contact')">Get in Touch &rarr;</a><a class="btn-o" onclick="go('venturion')">Next: Venturion &rarr;</a></div></div></section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE: VENTURION                       -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-venturion">
+<section class="product-hero-section"><div class="product-hero-inner"><div class="product-hero-text r">
+  <div class="label">03 — Capture</div>
+  <h1>Venturion</h1>
+  <div class="tagline">Advanced Grease Baffle Filter</div>
+  <p class="punch">Compound-curve baffle geometry that captures 50% more grease than standard filters — including fine particles below 10&micro;m. Patent pending.</p>
+  <p class="desc">Venturion intercepts grease at the point of entry into the extraction system. Coalescence zones force fine droplets to merge into larger ones. Compound curves capture them. Integrated capillary drainage prevents re-entry.</p>
+  <div class="product-stats">
+    <div><div class="product-stat-val">50%</div><div class="product-stat-label">More Captured</div></div>
+    <div><div class="product-stat-val">&lt;10&micro;m</div><div class="product-stat-label">Fine Particles</div></div>
+    <div><div class="product-stat-val">0</div><div class="product-stat-label">Moving Parts</div></div>
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start;margin-top:20px"><a class="btn" onclick="go('contact')">Get a Quote &rarr;</a><a class="btn-o" href="pdfs/FBIS_venturion.pdf" download>Download PDF &darr;</a></div>
+</div></div></section>
+<section class="render-section r">
+  <img src="renders/venturion.svg" class="product-render" style="width:100%;max-width:1100px;margin:0 auto;display:block;aspect-ratio:1300/1300">
+</section>
+<section class="detail-section pad"><div class="inner"><div class="detail-grid r">
+  <div><div class="label" style="margin-bottom:16px">How It Works</div><h2>Captures grease.<br>Before it enters the duct.</h2><p>Standard baffles let fine grease particles pass straight through. Venturion uses compound-curve geometry to accelerate air through a narrowing throat, forcing fine droplets to collide and merge. Larger droplets are captured by the curves and drained through an integrated capillary system.</p></div>
+  <div><ul class="feature-list">
+    <li><span>01</span>Air accelerates through baffle throat — fine droplets collide</li>
+    <li><span>02</span>Coalescence zone merges fine particles into larger droplets</li>
+    <li><span>03</span>Compound curves capture merged grease on contact</li>
+    <li><span>04</span>Integrated capillary drainage prevents re-entry into airflow</li>
+    <li><span>05</span>50% more grease captured than standard baffle filters</li>
+    <li><span>06</span>Zero moving parts — passive, maintenance-free operation</li>
+    <li><span>07</span>Pairs with Pro-Vent and GreaseEye for complete extraction hygiene</li>
+  </ul></div>
+</div></div></section>
+<section class="cta-band"><div class="inner r"><h2>Interested in Venturion?</h2><p>Talk to us about Venturion for your extraction systems.</p><div class="hero-btns"><a class="btn" onclick="go('contact')">Get in Touch &rarr;</a><a class="btn-o" onclick="go('greaseeye')">Next: GreaseEye &rarr;</a></div></div></section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE: GREASEEYE                        -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-greaseeye">
+<section class="product-hero-section"><div class="product-hero-inner"><div class="product-hero-text r">
+  <div class="label">04 — Measurement</div>
+  <h1>GreaseEye</h1>
+  <div class="tagline">Real-Time Grease Measurement</div>
+  <p class="punch">Optical sensors that measure grease accumulation daily — predicting when cleaning is actually needed instead of guessing on a calendar. Patent pending.</p>
+  <p class="desc">Strategic sensor placement across canopy, vertical risers, and horizontal runs maps the entire extraction system. A proprietary FBIS algorithm tracks accumulation rates, predicts thresholds, and auto-books cleaning when needed.</p>
+  <div class="product-stats">
+    <div><div class="product-stat-val">24/7</div><div class="product-stat-label">Live Monitoring</div></div>
+    <div><div class="product-stat-val">0.1mm</div><div class="product-stat-label">Precision</div></div>
+    <div><div class="product-stat-val">Auto</div><div class="product-stat-label">Clean Scheduling</div></div>
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start;margin-top:20px"><a class="btn" onclick="go('contact')">Get a Quote &rarr;</a><a class="btn-o" href="pdfs/FBIS_greaseeye.pdf" download>Download PDF &darr;</a></div>
+</div></div></section>
+<section class="render-section r">
+  <img src="renders/greaseeye.svg" class="product-render" style="width:100%;max-width:1100px;margin:0 auto;display:block;aspect-ratio:1/1">
+</section>
+<section class="detail-section pad"><div class="inner"><div class="detail-grid r">
+  <div><div class="label" style="margin-bottom:16px">How It Works</div><h2>Measures grease.<br>Predicts when to clean.</h2><p>GreaseEye uses optical sensing to measure grease depth across your extraction system every day. The proprietary FBIS algorithm tracks accumulation rates, adjusts for seasonal cooking pattern changes, and predicts exactly when the cleaning threshold will be reached.</p></div>
+  <div><ul class="feature-list">
+    <li><span>01</span>Optical sensors measure grease depth to 0.1mm precision</li>
+    <li><span>02</span>Strategic placement: canopy, vertical risers, horizontal runs</li>
+    <li><span>03</span>Proprietary FBIS algorithm — patent pending</li>
+    <li><span>04</span>Tracks daily accumulation rate and predicts threshold date</li>
+    <li><span>05</span>Auto-books cleaning when threshold reached — no calendar guesswork</li>
+    <li><span>06</span>Validates Pro-Vent and Venturion effectiveness with real data</li>
+    <li><span>07</span>Feeds data to Kitchen-IQ for autonomous system management</li>
+  </ul></div>
+</div></div></section>
+<section class="cta-band"><div class="inner r"><h2>Interested in GreaseEye?</h2><p>Talk to us about deploying GreaseEye across your estate.</p><div class="hero-btns"><a class="btn" onclick="go('contact')">Get in Touch &rarr;</a><a class="btn-o" onclick="go('kitcheniq')">Next: Kitchen-IQ &rarr;</a></div></div></section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE: KITCHEN-IQ                       -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-kitcheniq">
+<section class="product-hero-section"><div class="product-hero-inner"><div class="product-hero-text r">
+  <div class="label">05 — Intelligence</div>
+  <h1>Kitchen-IQ</h1>
+  <div class="tagline">Autonomous Management Platform</div>
+  <p class="punch">The central hub that connects every FBIS product into a single autonomous system. GreaseEye feeds data in. Kitchen-IQ makes decisions. Products respond.</p>
+  <p class="desc">Kitchen-IQ receives real-time grease data from GreaseEye, controls Pro-Vent dosing schedules, monitors Steri-Ice and Venturion status, and coordinates VentBot deployment — all without human intervention.</p>
+  <div class="product-stats">
+    <div><div class="product-stat-val">5</div><div class="product-stat-label">Systems Connected</div></div>
+    <div><div class="product-stat-val">Auto</div><div class="product-stat-label">Decision Making</div></div>
+    <div><div class="product-stat-val">1</div><div class="product-stat-label">Dashboard</div></div>
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start;margin-top:20px"><a class="btn" onclick="go('contact')">Get a Quote &rarr;</a><a class="btn-o" href="pdfs/FBIS_kitchen-iq.pdf" download>Download PDF &darr;</a></div>
+</div></div></section>
+<section class="render-section r">
+  <img src="renders/kitchen-iq.svg" class="product-render" style="width:100%;max-width:1100px;margin:0 auto;display:block;aspect-ratio:1/1">
+</section>
+<section class="detail-section pad"><div class="inner"><div class="detail-grid r">
+  <div><div class="label" style="margin-bottom:16px">How It Works</div><h2>One platform.<br>Every system connected.</h2><p>Kitchen-IQ is the management layer that turns individual products into a coordinated system. It receives live sensor data from GreaseEye, adjusts Pro-Vent fogging schedules based on actual grease levels, monitors Venturion filter status, tracks Steri-Ice cycles, and schedules VentBot deep cleans — all autonomously.</p></div>
+  <div><ul class="feature-list">
+    <li><span>01</span>Receives real-time data from GreaseEye sensors</li>
+    <li><span>02</span>Controls Pro-Vent dosing based on actual grease levels</li>
+    <li><span>03</span>Monitors Venturion filter performance</li>
+    <li><span>04</span>Tracks Steri-Ice sanitisation cycles</li>
+    <li><span>05</span>Schedules VentBot deployment when deep clean needed</li>
+    <li><span>06</span>Single dashboard for entire extraction estate</li>
+    <li><span>07</span>Autonomous decisions — no manual intervention required</li>
+  </ul></div>
+</div></div></section>
+<section class="cta-band"><div class="inner r"><h2>Interested in Kitchen-IQ?</h2><p>Talk to us about the complete integrated platform.</p><div class="hero-btns"><a class="btn" onclick="go('contact')">Get in Touch &rarr;</a><a class="btn-o" onclick="go('sterice')">Next: Steri-Ice &rarr;</a></div></div></section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE: STERI-ICE                        -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-sterice">
+<section class="product-hero-section"><div class="product-hero-inner"><div class="product-hero-text r">
+  <div class="label">06 — Sanitisation</div>
+  <h1>Steri-Ice</h1>
+  <div class="tagline">Ice Machine Sanitisation</div>
+  <p class="punch">Continuous ozone sanitisation keeps commercial ice machines free of mould and bacteria — extending cleaning intervals and protecting food safety.</p>
+  <p class="desc">A retrofit unit installed after a deep clean. Runs around the clock with no staff intervention. Annual ozone cell replacement.</p>
+  <div class="product-stats">
+    <div><div class="product-stat-val">24/7</div><div class="product-stat-label">Ozone Sanitisation</div></div>
+    <div><div class="product-stat-val">1 yr</div><div class="product-stat-label">Cell Life</div></div>
+    <div><div class="product-stat-val">1 yr</div><div class="product-stat-label">Full Warranty</div></div>
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start;margin-top:20px"><a class="btn" onclick="go('contact')">Get a Quote &rarr;</a><a class="btn-o" href="pdfs/FBIS_steriice.pdf" download>Download PDF &darr;</a></div>
+</div><div class="product-hero-img"><img src="images/sterice.png" alt="Steri-Ice"></div></div></section>
+<section class="render-section r">
+  <img src="renders/sterice.svg" class="product-render" style="width:100%;max-width:1100px;margin:0 auto;display:block;aspect-ratio:1/1">
+</section>
+<section class="detail-section pad"><div class="inner"><div class="detail-grid r">
+  <div><div class="label" style="margin-bottom:16px">How It Works</div><h2>Continuous ozone.<br>Clean ice, always.</h2><p>Steri-Ice retrofits to any commercial ice machine. Once installed following a deep clean, it generates ozone continuously — eliminating mould and bacteria around the clock.</p></div>
+  <div><ul class="feature-list">
+    <li><span>01</span>Retrofits to all major commercial ice machine brands</li>
+    <li><span>02</span>Continuous 24/7 ozone sanitisation</li>
+    <li><span>03</span>Dramatically extends manual cleaning intervals</li>
+    <li><span>04</span>Installed by your existing refrigeration partners (we train them)</li>
+    <li><span>05</span>Annual ozone cell replacement</li>
+    <li><span>06</span>1-year full replacement warranty</li>
+  </ul></div>
+</div></div></section>
+<section class="cta-band"><div class="inner r"><h2>Interested in Steri-Ice?</h2><p>Talk to us about deploying Steri-Ice across your estate.</p><div class="hero-btns"><a class="btn" onclick="go('contact')">Get in Touch &rarr;</a><a class="btn-o" onclick="go('innpulse')">Next: InnPulse &rarr;</a></div></div></section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE: INNPULSE                         -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-innpulse">
+<section class="product-hero-section"><div class="product-hero-inner"><div class="product-hero-text r">
+  <div class="label">07 — Beverage Lines</div>
+  <h1>InnPulse</h1>
+  <div class="tagline">Electronic Beer Line Management</div>
+  <p class="punch">Electromagnetic technology prevents yeast and bacteria adhering to beer lines. Cleaning extends from 7 to 28 days. No caustic chemicals.</p>
+  <p class="desc">75% less wasted beer, water, and staff time. Paired with pH-neutral EcoZenze powder for a complete chemical-free solution.</p>
+  <div class="product-stats">
+    <div><div class="product-stat-val">28 days</div><div class="product-stat-label">Between Cleans</div></div>
+    <div><div class="product-stat-val">75%</div><div class="product-stat-label">Less Waste</div></div>
+    <div><div class="product-stat-val">5 yr</div><div class="product-stat-label">Guarantee</div></div>
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start;margin-top:20px"><a class="btn" onclick="go('contact')">Get a Quote &rarr;</a><a class="btn-o" href="pdfs/FBIS_innpulse.pdf" download>Download PDF &darr;</a></div>
+</div><div class="product-hero-img"><img src="images/innpulse.png" alt="InnPulse"></div></div></section>
+<section class="render-section r">
+  <img src="renders/innpulse.svg" class="product-render" style="width:100%;max-width:1100px;margin:0 auto;display:block;aspect-ratio:1/1">
+</section>
+<section class="detail-section pad"><div class="inner"><div class="detail-grid r">
+  <div><div class="label" style="margin-bottom:16px">How It Works</div><h2>Electromagnetic field.<br>Clean lines, less often.</h2><p>InnPulse sends a pulsed electromagnetic field through beer lines, preventing yeast, bacteria, and proteins from aggregating. Paired with EcoZenze Activ — pH-neutral, biodegradable, 99.9999% kill rate.</p></div>
+  <div><ul class="feature-list">
+    <li><span>01</span>Extends cleaning from every 7 days to every 28 days</li>
+    <li><span>02</span>75% reduction in wasted beer, water, and staff time</li>
+    <li><span>03</span>5-year hardware guarantee, ultra-low energy</li>
+    <li><span>04</span>Compatible with beer, cider, and soft drink lines</li>
+    <li><span>05</span>EcoZenze: pH-neutral, biodegradable, no caustic chemicals</li>
+    <li><span>06</span>99.9999% kill rate against key spoilage organisms</li>
+  </ul></div>
+</div></div></section>
+<section class="cta-band"><div class="inner r"><h2>Interested in InnPulse?</h2><p>Talk to us about deploying InnPulse across your estate.</p><div class="hero-btns"><a class="btn" onclick="go('contact')">Get in Touch &rarr;</a><a class="btn-o" onclick="go('innline')">Next: InnLine &rarr;</a></div></div></section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE: INNLINE                          -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-innline">
+<section class="product-hero-section"><div class="product-hero-inner"><div class="product-hero-text r">
+  <div class="label">08 — Consumable</div>
+  <h1>InnLine</h1>
+  <div class="tagline">Pod-Format Beer &amp; Wine Line Cleaner</div>
+  <p class="punch">One pod. One perfect dose. Zero contact with concentrated chemicals. Little to no COSHH requirements.</p>
+  <p class="desc">Drop it in, the PVA shell dissolves, and you get exactly 10 litres of cleaning solution every time. Eliminates dosing errors across your estate.</p>
+  <div class="product-stats">
+    <div><div class="product-stat-val">1 pod</div><div class="product-stat-label">= 10L Solution</div></div>
+    <div><div class="product-stat-val">Zero</div><div class="product-stat-label">Chemical Contact</div></div>
+    <div><div class="product-stat-val">100%</div><div class="product-stat-label">Dosing Accuracy</div></div>
+  </div>
+  <div class="hero-btns" style="justify-content:flex-start;margin-top:20px"><a class="btn" onclick="go('contact')">Get a Quote &rarr;</a><a class="btn-o" href="pdfs/FBIS_innline.pdf" download>Download PDF &darr;</a></div>
+</div><div class="product-hero-img"><img src="images/innline.png" alt="InnLine"></div></div></section>
+<section class="render-section r">
+  <img src="renders/innline.svg" class="product-render" style="width:100%;max-width:1100px;margin:0 auto;display:block;aspect-ratio:1/1">
+</section>
+<section class="detail-section pad"><div class="inner"><div class="detail-grid r">
+  <div><div class="label" style="margin-bottom:16px">How It Works</div><h2>One pod. One dose.<br>Perfect every time.</h2><p>InnLine is a cleaning concentrate in a dissolvable PVA film. Drop the pod in, the film dissolves, and you get exactly 10 litres. No measuring. No chemical contact. No GHS hazard classification when diluted.</p></div>
+  <div><ul class="feature-list">
+    <li><span>01</span>1 pod = 10 litres of perfectly dosed solution</li>
+    <li><span>02</span>PVA shell: zero skin contact with concentrated chemicals</li>
+    <li><span>03</span>No GHS hazard classification when diluted</li>
+    <li><span>04</span>Eliminates dosing errors that cause under-cleaning or taint</li>
+    <li><span>05</span>Works for beer and wine lines</li>
+    <li><span>06</span>Compact, lightweight, easy to store</li>
+  </ul></div>
+</div></div></section>
+<section class="cta-band"><div class="inner r"><h2>Interested in InnLine?</h2><p>Talk to us about deploying InnLine across your estate.</p><div class="hero-btns"><a class="btn" onclick="go('contact')">Get in Touch &rarr;</a><a class="btn-o" onclick="go('ventbot')">See VentBot &rarr;</a></div></div></section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE: ABOUT                            -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-about">
+<section class="about-hero"><div class="inner r">
+  <div class="label">Who We Are</div>
+  <h1>One company.<br><span style="color:rgba(255,255,255,.15)">Every solution.</span></h1>
+  <p class="hero-sub" style="font-size:18px;line-height:1.8;color:var(--t3);max-width:580px;margin:0 auto;font-weight:300">FBIS exists to make commercial kitchens and hospitality venues safer, cleaner, and more efficient — by replacing outdated, reactive maintenance with intelligent, integrated technology.</p>
+</div></section>
+<section class="pad about-section" style="border-top:1px solid var(--border)"><div class="inner">
+  <div class="detail-grid r">
+    <div><div class="label" style="margin-bottom:16px">Our Purpose</div><h2 style="font-family:Outfit,sans-serif;font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-1.5px;margin-bottom:20px">Beyond compliance.<br>Beyond acceptable.</h2><p>Kitchen extraction systems are the single greatest fire risk in commercial food environments. Grease builds silently. Cleaning is infrequent, invasive, and expensive. We are the only company delivering a complete, integrated platform — from grease capture at the canopy to robotic cleaning deep in the ductwork, real-time measurement that replaces calendar guesswork, and an autonomous management layer that ties it all together. We don't just meet TR19 and NFPA 96. We go beyond them.</p></div>
+    <div><div class="label" style="margin-bottom:16px">Our Expertise</div><h2 style="font-family:Outfit,sans-serif;font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-1.5px;margin-bottom:20px">Deep R&amp;D.<br>Real-world deployment.</h2><p>Our expertise spans extraction engineering, robotics, biotechnology, optical sensing, fluid dynamics, and beverage hygiene. We hold patents and patent-pending IP across multiple product lines, develop proprietary algorithms and formulations, and partner with the UK and Ireland's largest hospitality groups.</p></div>
+  </div>
+  <div class="about-values r">
+    <div class="about-value"><h3>Innovation</h3><p>Patented and patent-pending technology developed in-house. From robotic dry ice systems to compound-curve baffle filters to real-time grease sensing — we don't rebrand other people's products.</p></div>
+    <div class="about-value"><h3>Integration</h3><p>Eight products designed to work as one system. Each solves a specific problem. Together, they cover the entire lifecycle — from capture to cleaning to measurement to management.</p></div>
+    <div class="about-value"><h3>Partnership</h3><p>We deploy through the UK's leading vent hygiene specialists. They bring the relationships. We bring the technology.</p></div>
+  </div>
+</div></section>
+<section class="cta-band"><div class="inner r"><h2>Let's talk.</h2><p>Whether you operate a national estate or a specialist vent hygiene company.</p><div class="hero-btns"><a class="btn" onclick="go('contact')">Get in Touch &rarr;</a><a class="btn-o" onclick="go('home');setTimeout(()=>document.getElementById('home-solutions').scrollIntoView({behavior:'smooth'}),100)">See Our Solutions</a></div></div></section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PAGE: CONTACT                          -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-contact">
+<section class="about-hero" style="padding-bottom:40px"><div class="inner r">
+  <div class="label">Contact</div>
+  <h1>Let's talk.</h1>
+  <p class="hero-sub" style="font-size:18px;line-height:1.8;color:var(--t3);max-width:580px;margin:0 auto;font-weight:300">Whether you operate a national estate or a specialist vent hygiene company, we should be talking.</p>
+</div></section>
+<section class="pad-sm" style="border-top:1px solid var(--border);padding-top:40px"><div class="inner r">
+  <div class="contact-form">
+    <div class="form-group"><label>I am a...</label><select><option value="" disabled selected>Select one</option><option>Pub / restaurant chain operator</option><option>Hotel or hospitality group</option><option>Vent hygiene / maintenance specialist</option><option>Facilities management company</option><option>Other</option></select></div>
+    <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
+    <div class="form-group"><label>Company</label><input type="text" placeholder="Your company"></div>
+    <div class="form-group"><label>Email</label><input type="email" placeholder="you@company.com"></div>
+    <div class="form-group"><label>Phone (optional)</label><input type="tel" placeholder="+44"></div>
+    <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your site or what you're looking for..."></textarea></div>
+    <button class="btn" style="width:100%;justify-content:center;margin-top:8px">Send Message &rarr;</button>
+  </div>
+  <div style="text-align:center;margin-top:64px;padding-top:48px;border-top:1px solid var(--border)">
+    <p style="font-size:14px;color:var(--t4)">Or email us directly at <a href="mailto:info@fbis.co.uk" style="color:var(--t2);text-decoration:none">info@fbis.co.uk</a></p>
+    <p style="font-size:13px;color:var(--t4);margin-top:8px">Glasgow, Scotland</p>
+  </div>
+</div></section>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="inner">
+    <div class="footer-top">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+          <svg width="28" height="28" viewBox="-85 -85 170 170" fill="none"><circle cx="0" cy="0" r="78" fill="none" stroke="#fff" stroke-width="2" opacity=".2"/><line x1="9" y1="-9" x2="49" y2="-49" stroke="#fff" stroke-width="2" opacity=".25"/><line x1="-9" y1="-9" x2="-49" y2="-49" stroke="#fff" stroke-width="2" opacity=".25"/><line x1="-9" y1="9" x2="-49" y2="49" stroke="#fff" stroke-width="2" opacity=".25"/><line x1="9" y1="9" x2="49" y2="49" stroke="#fff" stroke-width="2" opacity=".25"/><circle cx="0" cy="0" r="10" fill="none" stroke="#fff" stroke-width="1.5" opacity=".3"/></svg>
+          <span style="font-family:Outfit,sans-serif;font-size:16px;font-weight:700;letter-spacing:3px;color:#fff">FBIS</span>
+        </div>
+        <div style="font-size:13px;color:var(--t4);max-width:280px;line-height:1.6">Integrated extraction hygiene and beverage technology for the UK &amp; Ireland's largest hospitality operators.</div>
+      </div>
+      <div class="footer-col"><h4>Solutions</h4><a onclick="go('ventbot')">VentBot</a><a onclick="go('provent')">Pro-Vent</a><a onclick="go('venturion')">Venturion</a><a onclick="go('greaseeye')">GreaseEye</a><a onclick="go('kitcheniq')">Kitchen-IQ</a><a onclick="go('sterice')">Steri-Ice</a><a onclick="go('innpulse')">InnPulse</a><a onclick="go('innline')">InnLine</a></div>
+      <div class="footer-col"><h4>Company</h4><a onclick="go('about')">Who We Are</a><a onclick="go('contact')">Contact</a></div>
+      <div class="footer-col"><h4>Get in Touch</h4><a href="mailto:info@fbis.co.uk">info@fbis.co.uk</a><a>Glasgow, Scotland</a></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">&copy; 2026 Food &amp; Beverage Innovative Solutions Ltd &middot; SC872646</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.08)">VAT Registered</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

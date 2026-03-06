@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="product-render" viewBox="0 0 1200 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1000" fill="#0a0a0a"/>
+
+  <!-- Grid background -->
+  <pattern id="kiq_grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <line x1="40" y1="0" x2="40" y2="40" stroke="rgba(255,255,255,.012)" stroke-width="0.5"/>
+    <line x1="0" y1="40" x2="40" y2="40" stroke="rgba(255,255,255,.012)" stroke-width="0.5"/>
+  </pattern>
+  
+
+  <!-- ═══ HEADER ═══ -->
+  <text x="600" y="42" text-anchor="middle" font-family="Outfit,sans-serif" font-size="26" fill="#ffffff" letter-spacing="3">SYSTEM ARCHITECTURE</text>
+
+  <!-- Legend -->
+  <g transform="translate(380, 64)">
+    <line x1="0" y1="0" x2="28" y2="0" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/>
+    <polygon points="30,0 24,-3.5 24,3.5" fill="rgba(255,255,255,.35)"/>
+    <text x="38" y="4" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="1.5">DATA IN</text>
+
+    <line x1="130" y1="0" x2="158" y2="0" stroke="rgba(255,255,255,.35)" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <polygon points="160,0 154,-3.5 154,3.5" fill="rgba(255,255,255,.35)"/>
+    <text x="168" y="4" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="1.5">CONTROL OUT</text>
+
+    <line x1="300" y1="0" x2="328" y2="0" stroke="rgba(255,255,255,.15)" stroke-width="1.5" stroke-dasharray="2 4"/>
+    <polygon points="330,0 324,-3.5 324,3.5" fill="rgba(255,255,255,.15)"/>
+    <text x="338" y="4" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="1.5">MONITOR</text>
+  </g>
+
+  <!-- Arrow markers -->
+  <defs>
+    <!-- Data IN arrow (points toward hub) -->
+    <marker id="arr_in" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="rgba(255,255,255,.35)"/>
+    </marker>
+    <!-- Control OUT arrow (points away from hub) -->
+    <marker id="arr_out" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="rgba(255,255,255,.35)"/>
+    </marker>
+    <!-- Monitor arrow (dim) -->
+    <marker id="arr_mon" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="rgba(255,255,255,.15)"/>
+    </marker>
+  </defs>
+
+  <!-- ═══ CONNECTION LINES ═══ -->
+
+  <!-- GREASEEYE → HUB — DATA IN (solid, arrow at hub end) -->
+  <line x1="600" y1="175" x2="600" y2="320" stroke="#2a2c30" stroke-width="2" marker-end="url(#arr_in)"/>
+  <circle r="2.5" fill="rgba(255,255,255,.4)">
+    <animate attributeName="cx" values="600;600" dur="2.6s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="180;312;180" dur="2.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".4;.1;.0;.4" dur="2.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="2" fill="rgba(255,255,255,.25)">
+    <animate attributeName="cx" values="600;600" dur="2.6s" begin="0.9s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="180;312;180" dur="2.6s" begin="0.9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".25;.06;.0;.25" dur="2.6s" begin="0.9s" repeatCount="indefinite"/>
+  </circle>
+  <text x="618" y="258" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="2">DATA IN</text>
+
+  <!-- PRO-VENT ↔ HUB -->
+  <!-- Upper: solid DATA IN (Pro-Vent → Hub), arrow at hub end -->
+  <line x1="308" y1="195" x2="505" y2="335" stroke="#2a2c30" stroke-width="1.5" marker-end="url(#arr_in)"/>
+  <circle r="2.5" fill="rgba(255,255,255,.4)">
+    <animate attributeName="cx" values="312;498;312" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="198;330;198" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".4;.1;.0;.4" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Lower: dashed CONTROL OUT (Hub → Pro-Vent), arrow at Pro-Vent end -->
+  <line x1="505" y1="365" x2="308" y2="228" stroke="#2a2c30" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arr_out)"/>
+  <circle r="2.5" fill="rgba(255,255,255,.35)">
+    <animate attributeName="cx" values="500;314;500" dur="3.2s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="362;230;362" dur="3.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".35;.08;.0;.35" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Labels parallel to lines: angle = atan2(335-195, 505-308) ≈ 35° -->
+  <text x="380" y="250" font-family="DM Sans,sans-serif" font-size="10" fill="#ffffff" letter-spacing="2" transform="rotate(35,380,250)">DATA IN</text>
+  <text x="420" y="318" font-family="DM Sans,sans-serif" font-size="10" fill="#ffffff" letter-spacing="2" transform="rotate(35,420,318)">CONTROL</text>
+
+  <!-- VENTURION ← HUB — MONITOR (dim dashed, arrow at Venturion end) -->
+  <line x1="505" y1="450" x2="305" y2="555" stroke="#222426" stroke-width="1.5" stroke-dasharray="2 4" marker-end="url(#arr_mon)"/>
+  <circle r="2" fill="rgba(255,255,255,.15)">
+    <animate attributeName="cx" values="500;310;500" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="452;553;452" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".18;.04;.0;.18" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
+  <!-- angle = atan2(555-450, 305-505) ≈ -28° → label rotated 28° -->
+  <text x="410" y="488" font-family="DM Sans,sans-serif" font-size="10" fill="#ffffff" letter-spacing="2" transform="rotate(-28,410,488)">MONITOR</text>
+
+  <!-- STERI-ICE ← HUB — MONITOR (dim dashed, arrow at Steri-Ice end) -->
+  <line x1="695" y1="350" x2="893" y2="220" stroke="#222426" stroke-width="1.5" stroke-dasharray="2 4" marker-end="url(#arr_mon)"/>
+  <circle r="2" fill="rgba(255,255,255,.15)">
+    <animate attributeName="cx" values="700;888;700" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="347;224;347" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".18;.04;.0;.18" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <text x="795" y="270" font-family="DM Sans,sans-serif" font-size="10" fill="#ffffff" letter-spacing="2" transform="rotate(-33,795,270)">MONITOR</text>
+
+  <!-- VENTBOT ↔ HUB -->
+  <!-- Upper: solid DATA IN (VentBot → Hub), arrow at hub end -->
+  <line x1="893" y1="555" x2="698" y2="440" stroke="#2a2c30" stroke-width="1.5" marker-end="url(#arr_in)"/>
+  <circle r="2.5" fill="rgba(255,255,255,.4)">
+    <animate attributeName="cx" values="888;704;888" dur="3.2s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="552;443;552" dur="3.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".4;.1;.0;.4" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Lower: dashed CONTROL OUT (Hub → VentBot), arrow at VentBot end -->
+  <line x1="695" y1="460" x2="893" y2="580" stroke="#2a2c30" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arr_out)"/>
+  <circle r="2.5" fill="rgba(255,255,255,.35)">
+    <animate attributeName="cx" values="700;888;700" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="462;577;462" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".35;.08;.0;.35" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <!-- angle ≈ 33° -->
+  <text x="775" y="484" font-family="DM Sans,sans-serif" font-size="10" fill="#ffffff" letter-spacing="2" transform="rotate(33,775,484)">DATA IN</text>
+  <text x="810" y="542" font-family="DM Sans,sans-serif" font-size="10" fill="#ffffff" letter-spacing="2" transform="rotate(33,810,542)">CONTROL</text>
+
+  <!-- ═══ CENTRAL HUB — KITCHEN-IQ ═══ -->
+  <g transform="translate(600, 390)">
+    <rect x="-108" y="-72" width="216" height="144" rx="8" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="1">
+      <animate attributeName="opacity" values=".06;.02;.06" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="-95" y="-62" width="190" height="124" rx="4" fill="#111314" stroke="#3a3e42" stroke-width="2"/>
+    <rect x="-84" y="-52" width="168" height="90" rx="2" fill="#0e1012" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+    <line x1="-80" y1="-10" x2="80" y2="-10" stroke="rgba(255,255,255,.04)" stroke-width="0.5">
+      <animate attributeName="y1" values="-48;34;-48" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="-48;34;-48" dur="5s" repeatCount="indefinite"/>
+    </line>
+    <polyline points="-72,-22 -52,-28 -32,-16 -12,-32 8,-24 28,-36 48,-30 68,-34" stroke="rgba(255,255,255,.18)" stroke-width="1.5" fill="none"/>
+    <circle cx="-48" cy="6" r="3.5" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)" stroke-width="0.5"/>
+    <circle cx="-24" cy="6" r="3.5" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)" stroke-width="0.5"/>
+    <circle cx="0" cy="6" r="3.5" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.15)" stroke-width="0.5"/>
+    <circle cx="24" cy="6" r="3.5" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)" stroke-width="0.5"/>
+    <circle cx="48" cy="6" r="3.5" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)" stroke-width="0.5"/>
+    <circle cx="0" cy="6" r="3.5" fill="rgba(255,255,255,.25)">
+      <animate attributeName="r" values="3.5;7;3.5" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".25;.05;.25" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="-72" y="18" width="14" height="12" rx="1" fill="rgba(255,255,255,.06)"/>
+    <rect x="-52" y="14" width="14" height="16" rx="1" fill="rgba(255,255,255,.08)"/>
+    <rect x="-32" y="16" width="14" height="14" rx="1" fill="rgba(255,255,255,.07)"/>
+    <rect x="-12" y="12" width="14" height="18" rx="1" fill="rgba(255,255,255,.1)"/>
+    <rect x="8" y="15" width="14" height="15" rx="1" fill="rgba(255,255,255,.07)"/>
+    <rect x="28" y="18" width="14" height="12" rx="1" fill="rgba(255,255,255,.06)"/>
+    <circle cx="76" cy="-46" r="2" fill="#ffffff" opacity=".5">
+      <animate attributeName="opacity" values=".6;.2;.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="-28" y="42" width="56" height="6" rx="1" fill="#1a1e22" stroke="#3a3e42" stroke-width="1"/>
+    <rect x="-42" y="48" width="84" height="4" rx="1" fill="#161a1e" stroke="#3a3e42" stroke-width="0.8"/>
+    <text x="0" y="90" text-anchor="middle" font-family="Outfit,sans-serif" font-size="18" fill="#ffffff" letter-spacing="4" font-weight="700">KITCHEN-IQ</text>
+  </g>
+
+  <!-- ═══ NODES ═══ -->
+  <g transform="translate(600, 140)">
+    <rect x="-85" y="-32" width="170" height="64" rx="3" fill="#161a1e" stroke="#3a3e42" stroke-width="1.5"/>
+    <text x="0" y="-7" text-anchor="middle" font-family="Outfit,sans-serif" font-size="17" fill="#ffffff" letter-spacing="2" font-weight="600">GREASE-EYE</text>
+    <text x="0" y="12" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="1.5">DATA IN</text>
+  </g>
+  <g transform="translate(220, 210)">
+    <rect x="-85" y="-32" width="170" height="64" rx="3" fill="#161a1e" stroke="#3a3e42" stroke-width="1.5"/>
+    <text x="0" y="-7" text-anchor="middle" font-family="Outfit,sans-serif" font-size="17" fill="#ffffff" letter-spacing="2" font-weight="600">PRO-VENT</text>
+    <text x="0" y="12" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="1.5">DATA IN · CONTROL OUT</text>
+  </g>
+  <g transform="translate(220, 570)">
+    <rect x="-85" y="-32" width="170" height="64" rx="3" fill="#161a1e" stroke="#3a3e42" stroke-width="1.5"/>
+    <text x="0" y="-7" text-anchor="middle" font-family="Outfit,sans-serif" font-size="17" fill="#ffffff" letter-spacing="2" font-weight="600">VENTURION</text>
+    <text x="0" y="12" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="1.5">MONITOR</text>
+  </g>
+  <g transform="translate(980, 210)">
+    <rect x="-85" y="-32" width="170" height="64" rx="3" fill="#161a1e" stroke="#3a3e42" stroke-width="1.5"/>
+    <text x="0" y="-7" text-anchor="middle" font-family="Outfit,sans-serif" font-size="17" fill="#ffffff" letter-spacing="2" font-weight="600">STERI-ICE</text>
+    <text x="0" y="12" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="1.5">MONITOR</text>
+  </g>
+  <g transform="translate(980, 570)">
+    <rect x="-85" y="-32" width="170" height="64" rx="3" fill="#161a1e" stroke="#3a3e42" stroke-width="1.5"/>
+    <text x="0" y="-7" text-anchor="middle" font-family="Outfit,sans-serif" font-size="17" fill="#ffffff" letter-spacing="2" font-weight="600">VENTBOT</text>
+    <text x="0" y="12" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="1.5">DATA IN · CONTROL OUT</text>
+  </g>
+
+  <!-- ═══ CAPABILITY DESCRIPTIONS — pushed down with more gap ═══ -->
+  <g transform="translate(100, 696)">
+    <rect x="-20" y="-10" width="1040" height="170" rx="3" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+    <text x="0" y="35" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">① INGESTS GREASE-EYE DATA ACROSS ALL SITES</text>
+    <text x="0" y="70" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">② ADJUSTS PRO-VENT FOGGING FREQUENCY BASED ON GREASE LEVELS</text>
+    <text x="0" y="105" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">③ MONITORS STERI-ICE TREATMENT CYCLES</text>
+    <text x="0" y="140" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">④ SCHEDULES VENTBOT AND DEEP CLEANS PREDICTIVELY</text>
+  </g>
+
+  <!-- ═══ BRANDING — pushed down with bigger gap ═══ -->
+  <text x="600" y="940" text-anchor="middle" font-family="Outfit,sans-serif" font-size="48" fill="#ffffff" letter-spacing="12" font-weight="700">KITCHEN-IQ</text>
+  <text x="600" y="970" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="16" fill="#ffffff" letter-spacing="5">INTELLIGENT HYGIENE MANAGEMENT</text>
+</svg>

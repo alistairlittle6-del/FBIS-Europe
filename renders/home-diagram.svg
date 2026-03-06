@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1100 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- BUILDING SHELL — bold structural lines -->
+      <line x1="40" y1="40" x2="1060" y2="40" stroke="#fff" stroke-width="3" opacity=".7"/>
+      <line x1="40" y1="40" x2="40" y2="580" stroke="#fff" stroke-width="2" opacity=".5"/>
+      <line x1="1060" y1="40" x2="1060" y2="580" stroke="#fff" stroke-width="2" opacity=".5"/>
+      <line x1="40" y1="540" x2="1060" y2="540" stroke="#fff" stroke-width="2.5" opacity=".6"/>
+      <line x1="40" y1="580" x2="1060" y2="580" stroke="#fff" stroke-width="1.5" opacity=".3"/>
+      <line x1="40" y1="190" x2="1060" y2="190" stroke="#fff" stroke-width="1.5" opacity=".4"/>
+
+      <!-- Dividers -->
+      <line x1="480" y1="190" x2="480" y2="540" stroke="#fff" stroke-width="1.5" opacity=".3" stroke-dasharray="8 5"/>
+      <line x1="640" y1="190" x2="640" y2="540" stroke="#fff" stroke-width="1.5" opacity=".3" stroke-dasharray="8 5"/>
+
+      <!-- DUCTWORK -->
+      <rect x="120" y="60" width="640" height="44" fill="none" stroke="#fff" stroke-width="2.5" opacity=".7" rx="3"/>
+      <rect x="250" y="104" width="30" height="96" fill="none" stroke="#fff" stroke-width="2" opacity=".5" rx="2"/>
+      <!-- Grease -->
+      <path d="M150 68 Q156 78 152 88 Q158 96 153 102" stroke="#fff" stroke-width="1.5" opacity=".2" fill="none"/>
+      <path d="M350 66 Q356 76 352 86" stroke="#fff" stroke-width="1.5" opacity=".15" fill="none"/>
+      <path d="M550 67 Q556 77 552 87" stroke="#fff" stroke-width="1.5" opacity=".15" fill="none"/>
+
+      <!-- VENTBOT -->
+      <rect x="430" y="68" width="30" height="18" fill="#fff" opacity=".5" rx="4"/>
+      <line x1="430" y1="77" x2="418" y2="63" stroke="#fff" stroke-width="2" opacity=".6"/>
+      <line x1="460" y1="77" x2="472" y2="63" stroke="#fff" stroke-width="2" opacity=".6"/>
+      <line x1="430" y1="77" x2="418" y2="100" stroke="#fff" stroke-width="2" opacity=".6"/>
+      <line x1="460" y1="77" x2="472" y2="100" stroke="#fff" stroke-width="2" opacity=".6"/>
+      <circle cx="418" cy="62" r="4" fill="none" stroke="#fff" stroke-width="1.5" opacity=".5"/>
+      <circle cx="472" cy="62" r="4" fill="none" stroke="#fff" stroke-width="1.5" opacity=".5"/>
+      <circle cx="418" cy="101" r="4" fill="none" stroke="#fff" stroke-width="1.5" opacity=".5"/>
+      <circle cx="472" cy="101" r="4" fill="none" stroke="#fff" stroke-width="1.5" opacity=".5"/>
+      <line x1="445" y1="68" x2="445" y2="60" stroke="#fff" stroke-width="1.5" opacity=".6"/>
+      <circle cx="445" cy="58" r="3.5" fill="#fff" opacity=".5"/>
+
+      <!-- CANOPY -->
+      <path d="M170 260 L200 200 L400 200 L430 260 Z" fill="none" stroke="#fff" stroke-width="2.5" opacity=".6"/>
+      <!-- Canopy lip -->
+      <line x1="168" y1="260" x2="432" y2="260" stroke="#fff" stroke-width="2" opacity=".4"/>
+      <!-- Filter panels (horizontal slots in the canopy base) -->
+      <rect x="195" y="248" width="60" height="8" rx="2" fill="none" stroke="#fff" stroke-width="1" opacity=".25"/>
+      <rect x="265" y="248" width="60" height="8" rx="2" fill="none" stroke="#fff" stroke-width="1" opacity=".25"/>
+      <rect x="335" y="248" width="60" height="8" rx="2" fill="none" stroke="#fff" stroke-width="1" opacity=".25"/>
+
+      <!-- PRO-VENT NOZZLE (left inner wall of canopy) -->
+      <circle cx="188" cy="230" r="3" fill="#fff" opacity=".45"/>
+      <!-- Fog cone -->
+      <path d="M191 230 L260 216 L260 244 Z" fill="#fff" opacity=".04"/>
+
+      <!-- ICE MACHINE (pass area) -->
+      <rect x="530" y="380" width="80" height="160" fill="none" stroke="#fff" stroke-width="2" opacity=".5" rx="5"/>
+      <!-- Top unit -->
+      <rect x="538" y="392" width="64" height="36" fill="none" stroke="#fff" stroke-width="1.2" opacity=".3" rx="3"/>
+      <!-- Storage door -->
+      <rect x="538" y="438" width="64" height="92" fill="none" stroke="#fff" stroke-width="1" opacity=".2" rx="3"/>
+
+      <!-- STERI-ICE UNIT (wall-mounted above ice machine) -->
+      <rect x="545" y="340" width="50" height="30" rx="3" fill="none" stroke="#fff" stroke-width="1.5" opacity=".5"/>
+      <!-- Vent slots -->
+      <line x1="555" y1="350" x2="585" y2="350" stroke="#fff" stroke-width=".8" opacity=".2"/>
+      <line x1="555" y1="354" x2="585" y2="354" stroke="#fff" stroke-width=".8" opacity=".2"/>
+      <line x1="555" y1="358" x2="585" y2="358" stroke="#fff" stroke-width=".8" opacity=".2"/>
+      <!-- LED -->
+      <circle cx="557" cy="346" r="2" fill="#fff" opacity=".5"/>
+      <!-- Pipe from steri-ice down into ice machine -->
+      <line x1="570" y1="370" x2="570" y2="380" stroke="#fff" stroke-width="2" opacity=".35"/>
+      <!-- Ozone glow inside ice machine -->
+      <circle cx="570" cy="410" r="6" fill="#fff" opacity=".15"/>
+      <circle cx="570" cy="410" r="12" fill="none" stroke="#fff" stroke-width=".6" opacity=".08"/>
+
+      <!-- STOVE -->
+      <rect x="200" y="430" width="200" height="110" fill="none" stroke="#fff" stroke-width="2" opacity=".4" rx="4"/>
+      <circle cx="260" cy="465" r="22" fill="none" stroke="#fff" stroke-width="1.5" opacity=".3"/>
+      <circle cx="260" cy="465" r="10" fill="none" stroke="#fff" stroke-width="1" opacity=".2"/>
+      <circle cx="340" cy="465" r="22" fill="none" stroke="#fff" stroke-width="1.5" opacity=".3"/>
+      <circle cx="340" cy="465" r="10" fill="none" stroke="#fff" stroke-width="1" opacity=".2"/>
+      <!-- Heat -->
+      <path d="M260 430 Q264 395 260 360 Q256 325 260 290 Q264 260 260 240" stroke="#fff" stroke-width="1" opacity=".1" fill="none"/>
+      <path d="M340 430 Q344 395 340 360 Q336 325 340 290 Q344 260 340 240" stroke="#fff" stroke-width="1" opacity=".1" fill="none"/>
+
+      <!-- BAR/CELLAR -->
+      <rect x="680" y="370" width="340" height="14" fill="#fff" opacity=".15" rx="3"/>
+      <rect x="680" y="384" width="340" height="156" fill="none" stroke="#fff" stroke-width="1.5" opacity=".2" rx="3"/>
+
+      <!-- TAPS -->
+      <rect x="750" y="335" width="10" height="35" fill="#fff" opacity=".45" rx="2"/>
+      <rect x="745" y="328" width="20" height="10" fill="none" stroke="#fff" stroke-width="1.2" opacity=".4" rx="3"/>
+      <rect x="800" y="335" width="10" height="35" fill="#fff" opacity=".45" rx="2"/>
+      <rect x="795" y="328" width="20" height="10" fill="none" stroke="#fff" stroke-width="1.2" opacity=".4" rx="3"/>
+      <rect x="850" y="335" width="10" height="35" fill="#fff" opacity=".45" rx="2"/>
+      <rect x="845" y="328" width="20" height="10" fill="none" stroke="#fff" stroke-width="1.2" opacity=".4" rx="3"/>
+
+      <!-- BEER LINES -->
+      <path d="M755 370 L755 420 Q755 440 740 440 L720 440 L720 540" stroke="#fff" stroke-width="1.5" opacity=".3" fill="none"/>
+      <path d="M805 370 L805 430 Q805 450 790 450 L770 450 L770 540" stroke="#fff" stroke-width="1.5" opacity=".3" fill="none"/>
+      <path d="M855 370 L855 440 Q855 460 840 460 L820 460 L820 540" stroke="#fff" stroke-width="1.5" opacity=".3" fill="none"/>
+
+      <!-- INNPULSE -->
+      <rect x="698" y="400" width="44" height="28" fill="none" stroke="#fff" stroke-width="2" opacity=".5" rx="4"/>
+      <circle cx="720" cy="414" r="20" fill="none" stroke="#fff" stroke-width="1" opacity=".15"/>
+
+      <!-- KEGS -->
+      <ellipse cx="720" cy="500" rx="20" ry="28" fill="none" stroke="#fff" stroke-width="1.2" opacity=".2"/>
+      <ellipse cx="770" cy="500" rx="20" ry="28" fill="none" stroke="#fff" stroke-width="1.2" opacity=".15"/>
+      <ellipse cx="820" cy="500" rx="20" ry="28" fill="none" stroke="#fff" stroke-width="1.2" opacity=".12"/>
+
+      <!-- INNLINE -->
+      <rect x="910" y="420" width="64" height="74" fill="none" stroke="#fff" stroke-width="2" opacity=".45" rx="4"/>
+      <ellipse cx="942" cy="455" rx="16" ry="12" fill="none" stroke="#fff" stroke-width="1.5" opacity=".35"/>
+
+    </svg>
