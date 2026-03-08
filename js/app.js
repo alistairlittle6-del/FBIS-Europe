@@ -16,6 +16,22 @@ window.addEventListener('scroll', () => {
   lastScroll = y;
 }, {passive: true});
 
+
+// SEO: Dynamic page titles
+const pageTitles = {
+  home: 'FBIS — Robotic Duct Cleaning & Integrated Kitchen Hygiene Technology',
+  ventbot: 'VentBot — Robotic Duct Cleaning | FBIS',
+  provent: 'Pro-Vent — Automated Probiotic Fogging | FBIS',
+  venturion: 'Venturion — Compound-Curve Baffle Filter | FBIS',
+  greaseeye: 'GreaseEye — Real-Time Grease Measurement | FBIS',
+  kitcheniq: 'Kitchen-IQ — Integrated Management Platform | FBIS',
+  sterice: 'Steri-Ice — Ozone Ice Machine Sanitisation | FBIS',
+  innpulse: 'InnPulse — Electronic Beer Line Management | FBIS',
+  innline: 'InnLine — Pod-Format Beer Line Cleaner | FBIS',
+  about: 'Who We Are | FBIS',
+  contact: 'Contact | FBIS'
+};
+
 // ═══════════ ROUTING ═══════════
 let currentPage = 'home';
 
@@ -26,6 +42,9 @@ function go(page) {
   if (!el) return;
   el.classList.add('active');
   currentPage = page;
+
+  // SEO: Update page title
+  document.title = pageTitles[page] || 'FBIS';
 
   // Scroll to top
   window.scrollTo(0, 0);
@@ -231,4 +250,115 @@ setTimeout(() => {
 
 // ═══════════════════════════════════════════════════════════════
 // END TRIAL FEATURES BATCH 2
+// ═══════════════════════════════════════════════════════════════
+
+// ═══════════════════════════════════════════════════════════════
+// CONTACT FORM, COOKIES, ANALYTICS
+// ═══════════════════════════════════════════════════════════════
+
+// Add privacy page title
+if(typeof pageTitles !== 'undefined') pageTitles.privacy = 'Privacy Policy | FBIS';
+
+// ═══════════ CONTACT FORM (Formspree via fetch) ═══════════
+(function(){
+  const form = document.getElementById('contactForm');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = document.getElementById('formBtn');
+    const status = document.getElementById('formStatus');
+    const origText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(r){
+      if(r.ok){
+        status.textContent = 'Message sent — we\'ll be in touch shortly.';
+        status.className = 'form-success';
+        status.style.display = 'block';
+        form.reset();
+        btn.textContent = 'Sent ✓';
+        setTimeout(function(){ btn.textContent = origText; btn.disabled = false; }, 3000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    }).catch(function(){
+      status.textContent = 'Something went wrong. Please email us directly at info@fbis-europe.com';
+      status.className = 'form-error';
+      status.style.display = 'block';
+      btn.textContent = origText;
+      btn.disabled = false;
+    });
+  });
+})();
+
+// ═══════════ COOKIE CONSENT ═══════════
+function getCookieConsent(){
+  try { return localStorage.getItem('fbis_cookies'); } catch(e){ return null; }
+}
+function setCookieConsent(val){
+  try { localStorage.setItem('fbis_cookies', val); } catch(e){}
+}
+
+function acceptCookies(){
+  setCookieConsent('accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+  loadAnalytics();
+}
+
+function declineCookies(){
+  setCookieConsent('declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+
+// Show banner if no consent recorded
+(function(){
+  const consent = getCookieConsent();
+  if(!consent){
+    setTimeout(function(){
+      document.getElementById('cookieBanner').classList.add('show');
+    }, 2500); // delay so it doesn't compete with intro
+  } else if(consent === 'accepted'){
+    loadAnalytics();
+  }
+})();
+
+// ═══════════ GOOGLE ANALYTICS (GA4) ═══════════
+// Replace G-XXXXXXXXXX with your actual GA4 Measurement ID
+function loadAnalytics(){
+  if(document.getElementById('ga-script')) return; // already loaded
+  var s = document.createElement('script');
+  s.id = 'ga-script';
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+  document.head.appendChild(s);
+  s.onload = function(){
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  };
+}
+
+// Track SPA page views
+(function(){
+  var origGo2 = window.go;
+  window.go = function(page){
+    origGo2(page);
+    if(window.gtag){
+      gtag('event', 'page_view', {
+        page_title: document.title,
+        page_path: '/' + page
+      });
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════════════════════════
+// END CONTACT FORM, COOKIES, ANALYTICS
 // ═══════════════════════════════════════════════════════════════
