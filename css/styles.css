@@ -85,7 +85,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);line-
 }
 .nav-bar-links a .nb-tag{
   font-size:8px;font-weight:500;
-  color:var(--t4);letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;
   line-height:1;margin-top:2px;
 }
 .nav-bar-links a:hover .nb-name{color:#fff}
