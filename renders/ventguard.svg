@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="product-render" viewBox="0 0 1300 1140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1300" height="1140" fill="#0a0a0a"/>
+
+  <!-- Grid background -->
+  <pattern id="vn_grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <line x1="40" y1="0" x2="40" y2="40" stroke="rgba(255,255,255,.012)" stroke-width="0.5"/>
+    <line x1="0" y1="40" x2="40" y2="40" stroke="rgba(255,255,255,.012)" stroke-width="0.5"/>
+  </pattern>
+  
+
+  <!-- ═══ SECTION LABELS ═══ -->
+  <text x="330" y="42" text-anchor="middle" font-family="Outfit,sans-serif" font-size="26" fill="#ffffff" letter-spacing="3">CROSS SECTION</text>
+  <text x="950" y="42" text-anchor="middle" font-family="Outfit,sans-serif" font-size="26" fill="#ffffff" letter-spacing="3">BEFORE &amp; AFTER</text>
+
+  <!-- ═══ LEFT: BAFFLE FILTER CROSS SECTION ═══ -->
+  <g transform="translate(30, 70)">
+    <!-- Filter housing -->
+    <rect x="0" y="0" width="600" height="680" rx="2" fill="#111314" stroke="#2a2c30" stroke-width="1.5"/>
+    <line x1="5" y1="5" x2="595" y2="5" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+    <line x1="5" y1="675" x2="595" y2="675" stroke="rgba(255,255,255,.03)" stroke-width="1"/>
+    <line x1="5" y1="5" x2="5" y2="675" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+    <line x1="595" y1="5" x2="595" y2="675" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+
+    <!-- ═══ CLEAN AIR OUT (top) ═══ -->
+    <g transform="translate(50,0)">
+    <line x1="250" y1="85" x2="250" y2="55" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+    <polygon points="250,50 244,60 256,60" fill="rgba(255,255,255,.4)"/>
+    <text x="250" y="44" text-anchor="middle" font-family="Outfit,sans-serif" font-size="14" fill="#ffffff" letter-spacing="2">CLEAN AIR OUT</text>
+
+    <!-- Clean air particles (very few) -->
+    <circle cx="220" cy="100" r="1.5" fill="rgba(255,255,255,.03)">
+      <animate attributeName="cy" values="160;60;160" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="110" r="1" fill="rgba(255,255,255,.02)">
+      <animate attributeName="cy" values="150;70;150" dur="5.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- ═══ VERTICAL BAFFLE PLATES — compound curve profiles, 90° orientation ═══ -->
+    <!-- Baffles are vertical plates, air flows upward between them -->
+    <!-- Each plate has a compound curve profile creating throat restrictions -->
+
+    <!-- Baffle plate 1 -->
+    <path d="M70 180 Q70 220 85 260 Q100 300 100 340 Q100 380 85 420 Q70 460 70 500" 
+          stroke="#3a3e42" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Baffle plate 2 -->
+    <path d="M150 180 Q150 220 135 260 Q120 300 120 340 Q120 380 135 420 Q150 460 150 500" 
+          stroke="#4a4e52" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Baffle plate 3 -->
+    <path d="M210 180 Q210 220 225 260 Q240 300 240 340 Q240 380 225 420 Q210 460 210 500" 
+          stroke="#3a3e42" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Baffle plate 4 -->
+    <path d="M290 180 Q290 220 275 260 Q260 300 260 340 Q260 380 275 420 Q290 460 290 500" 
+          stroke="#4a4e52" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Baffle plate 5 -->
+    <path d="M350 180 Q350 220 365 260 Q380 300 380 340 Q380 380 365 420 Q350 460 350 500" 
+          stroke="#3a3e42" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Baffle plate 6 -->
+    <path d="M430 180 Q430 220 415 260 Q400 300 400 340 Q400 380 415 420 Q430 460 430 500" 
+          stroke="#4a4e52" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Throat restriction zones (narrowest gaps between plates) -->
+    <line x1="70" y1="340" x2="150" y2="340" stroke="rgba(255,255,255,.04)" stroke-width="0.5" stroke-dasharray="2 4"/>
+    <line x1="210" y1="340" x2="290" y2="340" stroke="rgba(255,255,255,.04)" stroke-width="0.5" stroke-dasharray="2 4"/>
+    <line x1="350" y1="340" x2="430" y2="340" stroke="rgba(255,255,255,.04)" stroke-width="0.5" stroke-dasharray="2 4"/>
+
+    <!-- Airflow paths weaving between baffles (animated) -->
+    <circle cx="110" cy="400" r="1.5" fill="rgba(255,255,255,.06)">
+      <animate attributeName="cy" values="490;200;490" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="110;95;110" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".06;.02;.06" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="170" cy="420" r="1.2" fill="rgba(255,255,255,.05)">
+      <animate attributeName="cy" values="490;210;490" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="170;185;170" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".05;.015;.05" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="410" r="1.5" fill="rgba(255,255,255,.06)">
+      <animate attributeName="cy" values="490;220;490" dur="3.8s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="250;240;250" dur="3.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".06;.02;.06" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="430" r="1.2" fill="rgba(255,255,255,.05)">
+      <animate attributeName="cy" values="490;200;490" dur="4.2s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="320;335;320" dur="4.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".05;.015;.05" dur="4.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Grease droplets draining DOWN baffle surfaces (animated) -->
+    <circle cx="88" cy="300" r="2" fill="rgba(255,255,255,.12)">
+      <animate attributeName="cy" values="280;510;280" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".12;.04;.12" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="228" cy="320" r="1.8" fill="rgba(255,255,255,.1)">
+      <animate attributeName="cy" values="300;512;300" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".1;.03;.1" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="362" cy="310" r="2.2" fill="rgba(255,255,255,.1)">
+      <animate attributeName="cy" values="290;510;290" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".1;.03;.1" dur="4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Rising grease particles below baffles -->
+    <circle cx="110" cy="590" r="3" fill="rgba(255,255,255,.08)">
+      <animate attributeName="cy" values="600;500;600" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".08;.02;.08" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="220" cy="595" r="2.5" fill="rgba(255,255,255,.07)">
+      <animate attributeName="cy" values="600;490;600" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".07;.015;.07" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="588" r="3.5" fill="rgba(255,255,255,.06)">
+      <animate attributeName="cy" values="600;495;600" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".06;.01;.06" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="420" cy="592" r="2.8" fill="rgba(255,255,255,.07)">
+      <animate attributeName="cy" values="600;498;600" dur="4.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".07;.02;.07" dur="4.3s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- ═══ INTEGRATED DRAINAGE ═══ -->
+    <rect x="25" y="510" width="490" height="14" rx="2" fill="#1a1c20" stroke="#3a3e42" stroke-width="1"/>
+    <rect x="30" y="513" width="480" height="8" rx="1" fill="url(#vn_greaseG)"/>
+    
+    <!-- Drain -->
+    <rect x="230" y="524" width="40" height="12" rx="2" fill="#1a1c20" stroke="#3a3e42" stroke-width="1"/>
+    <line x1="250" y1="536" x2="250" y2="555" stroke="#3a3e42" stroke-width="2"/>
+    <polygon points="250,560 244,552 256,552" fill="rgba(255,255,255,.25)"/>
+
+    <!-- ═══ GREASE-LADEN AIR IN (bottom) ═══ -->
+    <line x1="250" y1="620" x2="250" y2="645" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+    <polygon points="250,620 244,630 256,630" fill="rgba(255,255,255,.4)"/>
+    <text x="250" y="665" text-anchor="middle" font-family="Outfit,sans-serif" font-size="14" fill="#ffffff" letter-spacing="2">GREASE-LADEN AIR IN</text>
+
+    <!-- ═══ LABELS ═══ -->
+    <text x="250" y="148" text-anchor="middle" font-family="Outfit,sans-serif" font-size="14" fill="#ffffff" letter-spacing="2">ADVANCED BAFFLE GEOMETRY</text>
+    <text x="250" y="163" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#ffffff" letter-spacing="2">PATENT PENDING</text>
+
+    <!-- Clean numbered callouts below drainage -->
+    <text x="250" y="585" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#ffffff" letter-spacing="2">① COALESCENCE ZONE  ·  ② COMPOUND CURVES  ·  ③ CAPILLARY DRAINAGE</text>
+    </g>
+  </g>
+
+  <!-- ═══ RIGHT: BEFORE & AFTER ═══ -->
+  <g transform="translate(670, 70)">
+    <!-- STANDARD BAFFLE -->
+    <rect x="0" y="0" width="270" height="310" rx="2" fill="#111314" stroke="#2a2c30" stroke-width="1.5"/>
+    <text x="135" y="30" text-anchor="middle" font-family="Outfit,sans-serif" font-size="16" fill="#ffffff" letter-spacing="2">STANDARD BAFFLE</text>
+
+    <rect x="20" y="50" width="230" height="130" rx="2" fill="#161a1e" stroke="#2a2c30" stroke-width="1"/>
+    <rect x="25" y="55" width="220" height="14" rx="1" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.04)" stroke-width="0.5"/>
+    <rect x="25" y="151" width="220" height="14" rx="1" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.04)" stroke-width="0.5"/>
+    <rect x="25" y="55" width="8" height="110" rx="1" fill="rgba(255,255,255,.05)"/>
+    <rect x="237" y="55" width="8" height="110" rx="1" fill="rgba(255,255,255,.05)"/>
+    <circle cx="80" cy="95" r="4" fill="rgba(255,255,255,.06)"/>
+    <circle cx="130" cy="105" r="5" fill="rgba(255,255,255,.05)"/>
+    <circle cx="175" cy="90" r="3.5" fill="rgba(255,255,255,.06)"/>
+    <circle cx="105" cy="130" r="4.5" fill="rgba(255,255,255,.05)"/>
+    <circle cx="195" cy="120" r="3" fill="rgba(255,255,255,.06)"/>
+    <circle cx="150" cy="78" r="3.8" fill="rgba(255,255,255,.05)"/>
+    <circle cx="60" cy="140" r="3.2" fill="rgba(255,255,255,.06)"/>
+    <circle cx="210" cy="100" r="4.2" fill="rgba(255,255,255,.05)"/>
+
+    <text x="135" y="210" text-anchor="middle" font-family="Outfit,sans-serif" font-size="13" fill="#ffffff" letter-spacing="1.5">SIGNIFICANT GREASE PASSES THROUGH</text>
+
+    <rect x="35" y="230" width="200" height="55" rx="2" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+    <text x="135" y="255" text-anchor="middle" font-family="Outfit,sans-serif" font-size="16" fill="#ffffff" letter-spacing="2">HIGH FIRE RISK</text>
+    <text x="135" y="273" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#ffffff" letter-spacing="1">Rapid grease accumulation in duct</text>
+
+    <!-- VENTGUARD -->
+    <rect x="300" y="0" width="270" height="310" rx="2" fill="#111314" stroke="#2a2c30" stroke-width="1.5"/>
+    <text x="435" y="30" text-anchor="middle" font-family="Outfit,sans-serif" font-size="16" fill="#ffffff" letter-spacing="2">VENTGUARD</text>
+
+    <rect x="320" y="50" width="230" height="130" rx="2" fill="#161a1e" stroke="#2a2c30" stroke-width="1"/>
+    <rect x="325" y="55" width="220" height="4" rx="1" fill="rgba(255,255,255,.025)"/>
+    <rect x="325" y="167" width="220" height="4" rx="1" fill="rgba(255,255,255,.025)"/>
+    <circle cx="400" cy="100" r="2" fill="rgba(255,255,255,.025)"/>
+    <circle cx="460" cy="120" r="1.5" fill="rgba(255,255,255,.02)"/>
+    <circle cx="370" cy="135" r="1.8" fill="rgba(255,255,255,.025)"/>
+
+    <text x="435" y="210" text-anchor="middle" font-family="Outfit,sans-serif" font-size="13" fill="#ffffff" letter-spacing="1.5">50% MORE GREASE CAPTURED</text>
+
+    <rect x="335" y="230" width="200" height="55" rx="2" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+    <text x="435" y="255" text-anchor="middle" font-family="Outfit,sans-serif" font-size="16" fill="#ffffff" letter-spacing="2">REDUCED RISK</text>
+    <text x="435" y="273" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#ffffff" letter-spacing="1">Dramatically less grease in duct</text>
+  </g>
+
+  <!-- ═══ RIGHT: DESCRIPTION ═══ -->
+  <g transform="translate(670, 430)">
+    <line x1="0" y1="0" x2="570" y2="0" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+
+    <rect x="0" y="12" width="570" height="100" rx="3" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+    <text x="285" y="42" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="20" fill="#ffffff" letter-spacing="1.5">VentGuard captures grease from air without</text>
+    <text x="285" y="68" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="20" fill="#ffffff" letter-spacing="1.5">significant pressure drop. Protecting the</text>
+    <text x="285" y="94" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="20" fill="#ffffff" letter-spacing="1.5">extraction system at source.</text>
+  </g>
+
+  <!-- ═══ PROCESS STEPS (boxed) ═══ -->
+  <g transform="translate(670, 640)">
+    <rect x="0" y="-25" width="570" height="175" rx="2" fill="rgba(255,255,255,.015)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+    <text x="285" y="0" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">① AIR ACCELERATES THROUGH BAFFLE THROAT</text>
+    <text x="285" y="38" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">② FINE DROPLETS MERGE INTO LARGER DROPLETS</text>
+    <text x="285" y="76" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">③ COMPOUND CURVES CAPTURE MERGED GREASE</text>
+    <text x="285" y="114" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">④ INTEGRATED DRAINAGE PREVENTS RE-ENTRY</text>
+  </g>
+
+  <!-- ═══ KEY STAT (full width, centred) ═══ -->
+  <g transform="translate(30, 850)">
+    <rect x="0" y="0" width="1240" height="130" rx="2" fill="rgba(255,255,255,.015)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+    <text x="620" y="58" text-anchor="middle" font-family="Outfit,sans-serif" font-size="60" fill="#ffffff" letter-spacing="8" font-weight="700">50% MORE</text>
+    <text x="620" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="15" fill="#ffffff" letter-spacing="4">GREASE CAPTURED THAN STANDARD BAFFLES</text>
+    <text x="620" y="114" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="2">INCLUDING FINE PARTICLES BELOW 10μm</text>
+  </g>
+
+  <!-- ═══ COMPATIBILITY ═══ -->
+  <text x="650" y="1010" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#ffffff" letter-spacing="2">PAIRS WITH PRO-VENT AND DUCT-SENSE FOR COMPLETE EXTRACTION HYGIENE</text>
+
+  <!-- ═══ BRANDING ═══ -->
+  <text x="650" y="1070" text-anchor="middle" font-family="Outfit,sans-serif" font-size="48" fill="#ffffff" letter-spacing="12" font-weight="700">VENTGUARD</text>
+  <text x="650" y="1100" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="16" fill="#ffffff" letter-spacing="5">ADVANCED GREASE BAFFLE FILTER</text>
+  <text x="650" y="1120" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="4">PATENT PENDING</text>
+
+  <!-- ═══ DEFS ═══ -->
+  <defs>
+    <linearGradient id="vn_greaseG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,.04)"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,.08)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,.04)"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -45,7 +45,7 @@
 
   <!-- ═══ CONNECTION LINES ═══ -->
 
-  <!-- GREASEEYE → HUB — DATA IN (solid, arrow at hub end) -->
+  <!-- DUCTSENSE → HUB — DATA IN (solid, arrow at hub end) -->
   <line x1="600" y1="175" x2="600" y2="320" stroke="#2a2c30" stroke-width="2" marker-end="url(#arr_in)"/>
   <circle r="2.5" fill="rgba(255,255,255,.4)">
     <animate attributeName="cx" values="600;600" dur="2.6s" repeatCount="indefinite"/>
@@ -78,7 +78,7 @@
   <text x="380" y="250" font-family="DM Sans,sans-serif" font-size="10" fill="#ffffff" letter-spacing="2" transform="rotate(35,380,250)">DATA IN</text>
   <text x="420" y="318" font-family="DM Sans,sans-serif" font-size="10" fill="#ffffff" letter-spacing="2" transform="rotate(35,420,318)">CONTROL</text>
 
-  <!-- VENTURION ← HUB — MONITOR (dim dashed, arrow at Venturion end) -->
+  <!-- VENTGUARD ← HUB — MONITOR (dim dashed, arrow at VentGuard end) -->
   <line x1="505" y1="450" x2="305" y2="555" stroke="#222426" stroke-width="1.5" stroke-dasharray="2 4" marker-end="url(#arr_mon)"/>
   <circle r="2" fill="rgba(255,255,255,.15)">
     <animate attributeName="cx" values="500;310;500" dur="4.5s" repeatCount="indefinite"/>
@@ -154,7 +154,7 @@
   <!-- ═══ NODES ═══ -->
   <g transform="translate(600, 140)">
     <rect x="-85" y="-32" width="170" height="64" rx="3" fill="#161a1e" stroke="#3a3e42" stroke-width="1.5"/>
-    <text x="0" y="-7" text-anchor="middle" font-family="Outfit,sans-serif" font-size="17" fill="#ffffff" letter-spacing="2" font-weight="600">GREASE-EYE</text>
+    <text x="0" y="-7" text-anchor="middle" font-family="Outfit,sans-serif" font-size="17" fill="#ffffff" letter-spacing="2" font-weight="600">DUCT-SENSE</text>
     <text x="0" y="12" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="1.5">DATA IN</text>
   </g>
   <g transform="translate(220, 210)">
@@ -164,7 +164,7 @@
   </g>
   <g transform="translate(220, 570)">
     <rect x="-85" y="-32" width="170" height="64" rx="3" fill="#161a1e" stroke="#3a3e42" stroke-width="1.5"/>
-    <text x="0" y="-7" text-anchor="middle" font-family="Outfit,sans-serif" font-size="17" fill="#ffffff" letter-spacing="2" font-weight="600">VENTURION</text>
+    <text x="0" y="-7" text-anchor="middle" font-family="Outfit,sans-serif" font-size="17" fill="#ffffff" letter-spacing="2" font-weight="600">VENTGUARD</text>
     <text x="0" y="12" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#ffffff" letter-spacing="1.5">MONITOR</text>
   </g>
   <g transform="translate(980, 210)">
@@ -181,7 +181,7 @@
   <!-- ═══ CAPABILITY DESCRIPTIONS — pushed down with more gap ═══ -->
   <g transform="translate(100, 696)">
     <rect x="-20" y="-10" width="1040" height="170" rx="3" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
-    <text x="0" y="35" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">① INGESTS GREASE-EYE DATA ACROSS ALL SITES</text>
+    <text x="0" y="35" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">① INGESTS DUCT-SENSE DATA ACROSS ALL SITES</text>
     <text x="0" y="70" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">② ADJUSTS PRO-VENT FOGGING FREQUENCY BASED ON GREASE LEVELS</text>
     <text x="0" y="105" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">③ MONITORS STERI-ICE TREATMENT CYCLES</text>
     <text x="0" y="140" font-family="DM Sans,sans-serif" font-size="18" fill="#ffffff" letter-spacing="2">④ SCHEDULES VENTBOT AND DEEP CLEANS PREDICTIVELY</text>
