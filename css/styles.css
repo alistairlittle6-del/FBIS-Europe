@@ -221,7 +221,7 @@ section{position:relative}
 .render-section .product-render{max-width:1100px;margin:0 auto;display:block}
 .product-stats{display:flex;gap:48px;margin-top:24px;flex-wrap:wrap}
 .product-stat-val{font-family:'Outfit',sans-serif;font-size:36px;font-weight:800;letter-spacing:-1.5px;color:#fff}
-.product-stat-label{font-size:10px;color:var(--t4);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px}
+.product-stat-label{font-size:10px;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px}
 
 /* ═══════════ DETAIL ═══════════ */
 .detail-section{border-bottom:1px solid var(--border)}
