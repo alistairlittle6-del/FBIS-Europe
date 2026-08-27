@@ -70,7 +70,9 @@ function go(page) {
   }, 50);
 }
 
-// Initial reveal — delayed for TRIAL 4 intro
+// Initial reveal — delayed for TRIAL 4 intro (short delay when intro is skipped)
+var introSeen = false;
+try { introSeen = sessionStorage.getItem('fbis_intro') === '1'; } catch(e){}
 setTimeout(() => {
   const obs2 = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -78,16 +80,18 @@ setTimeout(() => {
     });
   }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
   document.querySelectorAll('.page.active .r').forEach(el => obs2.observe(el));
-}, 1900);
+}, introSeen ? 150 : 1900);
 
 // ═══════════════════════════════════════════════════════════════
 // TRIAL FEATURES — Premium enhancements (remove block to revert)
 // ═══════════════════════════════════════════════════════════════
 
-// TRIAL 4: Intro overlay — dismiss after draw completes
+// TRIAL 4: Intro overlay — plays once per browser session, dismiss after draw completes
 (function(){
   const intro = document.getElementById('intro');
   if(!intro) return;
+  if(introSeen){ intro.remove(); return; }
+  try { sessionStorage.setItem('fbis_intro', '1'); } catch(e){}
   setTimeout(()=>{ intro.classList.add('done'); }, 1800);
   setTimeout(()=>{ intro.remove(); }, 2500);
 })();
@@ -362,3 +366,16 @@ function loadAnalytics(){
 // ═══════════════════════════════════════════════════════════════
 // END CONTACT FORM, COOKIES, ANALYTICS
 // ═══════════════════════════════════════════════════════════════
+
+// ═══════════ ACCESSIBILITY: keyboard-operable nav links ═══════════
+// Nav/footer links use onclick without href, so they are unfocusable by
+// default. Give them tab stops and Enter/Space activation.
+(function(){
+  document.querySelectorAll('a[onclick]:not([href])').forEach(function(a){
+    a.setAttribute('tabindex', '0');
+    a.setAttribute('role', 'link');
+    a.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); a.click(); }
+    });
+  });
+})();
